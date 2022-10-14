@@ -49,7 +49,7 @@ public class Main {
   private static void quiz7() {
     LocalDateTime dateTime = LocalDateTime.of(LocalDate.now(), LocalTime.now());
     ZoneId zoneId = ZoneId.systemDefault();
-    ZonedDateTime zonedDateTime = ZonedDateTime.of(dateTime, zoneId);
+    ZonedDateTime.of(dateTime, zoneId);
     Instant instant = Instant.now();
     System.out.println(instant);
   }
@@ -70,18 +70,18 @@ public class Main {
     if (durationMinute1.equals(durationMinute2)) {
       System.out.println("durationMinute1.equals(durationMinute2)");
     }
-    if (durationMinuteString1 == durationMinuteString2) {
-      System.out.println("durationMinuteString1 == durationMinuteString2");
-    }
+//    if (durationMinuteString1 == durationMinuteString2) { not used
+//      System.out.println("durationMinuteString1 == durationMinuteString2"); not used
+//    } not used
     if (durationMinuteString1.equals(durationMinuteString2)) {
       System.out.println("durationMinuteString1.equals(durationMinuteString2");
     }
-    if (durationDay.equals(periodDay)) {
-      System.out.println("durationDay.equals(periodDay)");
-    }
-    if (durationDayString == periodDayString) {
-      System.out.println("durationDayString == periodDayString");
-    }
+//    if (durationDay.equals(periodDay)) { not used
+//      System.out.println("durationDay.equals(periodDay)"); not used
+//    } not used
+//    if (durationDayString == periodDayString) { not used
+//      System.out.println("durationDayString == periodDayString"); not used
+//    } not used
     if (durationDayString.equals(periodDayString)) {
       System.out.println("durationDayString.equals(periodDayString)");
     }
@@ -89,7 +89,7 @@ public class Main {
   }
 
   private static void quiz5() {
-    Period period = Period.ofDays(1).ofYears(2);
+    Period period = Period.ofYears(2);
     LocalDateTime localDateTime = LocalDateTime.of(2020, 12, 31, 10, 0, 0, 0);
     localDateTime = localDateTime.minus((period));
     System.out.println(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(localDateTime));
@@ -113,10 +113,10 @@ public class Main {
 
   private static void quiz2() {
     LocalDateTime dateTime = LocalDateTime.of(2020, 12, 31, 10, 0, 0, 0);
-    dateTime.plusDays(1);
-    dateTime.plusHours(1);
-    dateTime.plusSeconds(1);
-    dateTime.plusMinutes(1);
+//    dateTime.plusDays(1); not used
+//    dateTime.plusHours(1); not used
+//    dateTime.plusSeconds(1); not used
+//    dateTime.plusMinutes(1); not used
     System.out.println(dateTime.format(DateTimeFormatter.ISO_DATE_TIME));
   }
 }
