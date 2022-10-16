@@ -1,10 +1,74 @@
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    test16();
+//    zad11();
+//    test16();
+    test17();
+  }
+
+  private static void test17() {
+    quiz17_2();
+  }
+
+
+
+  private static void quiz17_2() {
+    List<String> list = new ArrayList<>();
+    list.add("Gdańsk");
+    list.add("Łódź");
+    list.add("Wrocław");
+    list.removeIf((String s) -> s.contains("a"));
+  }
+
+  private static void zad11() {
+    System.out.println("*** Exc 1 ***");
+    exc01();
+    System.out.println();
+    System.out.println("*** Exc 2 ***");
+    exc02();
+    System.out.println();
+    System.out.println("*** Exc 3 ***");
+    exc03();
+    System.out.println();
+  }
+
+  private static void exc03() {
+  }
+
+  private static void exc02() {
+    Random random = new Random();
+    Integer[] integers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    List<Integer> list = Arrays.asList(integers);
+    System.out.println(list);
+    Integer tmp;
+    for (int i = 0; i < list.size(); i++) {
+      int randomIndex = random.nextInt(list.size());
+      tmp = list.get(i);
+      list.set(i, list.get(randomIndex));
+      list.set(randomIndex, tmp);
+    }
+    System.out.println(list);
+  }
+
+  private static void exc01() {
+    Set<String> stringSet = new HashSet<>();
+    stringSet.add("Ala");
+    stringSet.add("ma");
+    stringSet.add("kota!");
+    stringSet.add("Kot");
+    stringSet.add("miewa");
+    stringSet.add("Alę");
+    Iterator<String> iterator = stringSet.iterator();
+    while(iterator.hasNext()) {
+      System.out.print(iterator.next());
+      if(iterator.hasNext()) {
+        System.out.print(", ");
+      }
+    }
   }
 
   private static void test16() {
