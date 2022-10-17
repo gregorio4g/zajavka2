@@ -8,8 +8,8 @@ import java.util.*;
 public class Main {
   public static void main(String[] args) {
     zad11();
-    test16();
-    test17();
+//    test16();
+//    test17();
   }
 
   private static void test17() {
@@ -25,27 +25,52 @@ public class Main {
   }
 
   private static void zad11() {
-    System.out.println("*** Exc 1 ***");
+    System.out.println("*** Exc 11-1 ***");
     exc1101();
     System.out.println();
-    System.out.println("*** Exc 2 ***");
+    System.out.println("*** Exc 11-2 ***");
     exc1102();
     System.out.println();
-    System.out.println("*** Exc 3 ***");
+    System.out.println("*** Exc 11-3 ***");
     exc1103();
     System.out.println();
-    System.out.println("*** Exc 4 ***");
+    System.out.println("*** Exc 11-4 ***");
     exc1104();
     System.out.println();
-    System.out.println("*** Exc 5 ***");
+    System.out.println("*** Exc 11-5 ***");
     exc1105();
     System.out.println();
-    System.out.println("*** Exc 6 ***");
+    System.out.println("*** Exc 11-6 ***");
     exc1106();
     System.out.println();
-    System.out.println("*** Exc 7 ***");
+    System.out.println("*** Exc 11-7 ***");
     exc1107("Dupa Romana!");
     System.out.println();
+    System.out.println("*** Exc 11-8 ***");
+    exc1108();
+    System.out.println();
+  }
+
+  private static void exc1108() {
+    Map<Integer, String> map = new HashMap<>();
+    Map<Integer, String> map2 = new HashMap<>();
+    map.put(1, "Ala");
+    map.put(2, "Bogdan");
+    map.put(3, "Celina");
+    map.put(4, "Darek");
+    map.put(5, "Erwin");
+    map.put(6, "Fiona");
+    map.put(7, "Grzegorz");
+    System.out.println(map);
+    int a = 3;
+    int b = 5;
+    for (Integer integer : map.keySet()) {
+      if (integer >= 3 && integer < 5) {
+        map2.put(integer, map.get(integer));
+      }
+    }
+    System.out.println(map2);
+
   }
 
   private static void exc1107(@NotNull String inputString) {
