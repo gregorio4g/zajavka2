@@ -7,9 +7,62 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    zad11();
-//    test16();
+//    zad11();
+    test16();
+    zad13();
 //    test17();
+  }
+
+  private static void zad13() {
+    System.out.println("*** Exc 13-1 ***");
+    exc1301();
+    System.out.println();
+    System.out.println("*** Exc 13-2 ***");
+    exc1302();
+    System.out.println();
+    System.out.println("*** Exc 13-3 ***");
+    exc1303();
+    System.out.println();
+    System.out.println("*** Exc 13-4 ***");
+    exc1304();
+    System.out.println();
+    System.out.println("*** Exc 13-6 ***");
+    exc1306();
+    System.out.println();
+
+  }
+
+  private static void exc1306() {
+    ZonedDateTime zdt1 = ZonedDateTime.now(ZoneId.systemDefault());
+    System.out.println(zdt1);
+    System.out.println(zdt1.withZoneSameInstant(ZoneId.of("America/New_York")));
+  }
+
+  private static void exc1304() {
+    Instant i = Instant.now();
+    System.out.println(i.getEpochSecond());
+    Duration d = Duration.ofSeconds(i.getEpochSecond());
+    System.out.println(d);
+    Period p = Period.between(LocalDate.EPOCH, LocalDate.now());
+    System.out.println(p);
+  }
+
+  private static void exc1303() {
+    LocalDate date = LocalDate.of(2012, 6, 24);
+    System.out.println(date.getMonth());
+  }
+
+  private static void exc1302() {
+    LocalDate date = LocalDate.of(2018, 5, 6);
+    System.out.println(date + " was " + (date.getDayOfWeek()));
+  }
+
+  private static void exc1301() {
+    OffsetDateTime offsetDateTime = OffsetDateTime.now();
+    System.out.println(offsetDateTime);
+    System.out.println(offsetDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+    System.out.println(offsetDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+    System.out.println(offsetDateTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm a")));
   }
 
   private static void test17() {
