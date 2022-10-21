@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -7,10 +5,10 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-//    zad11();
-//    test16();
-//    zad13();
-//    test17();
+    zad11();
+    test16();
+    zad13();
+    test17();
     zad14();
     test18();
   }
