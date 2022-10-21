@@ -5,12 +5,12 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    zad11();
-    test16();
-    zad13();
-    test17();
+//    zad11();
+//    test16();
+//    zad13();
+//    test17();
     zad14();
-    test18();
+//    test18();
   }
 
   private static void zad14() {
