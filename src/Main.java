@@ -8,9 +8,21 @@ import java.util.*;
 public class Main {
   public static void main(String[] args) {
 //    zad11();
-    test16();
-    zad13();
-//    test17();
+//    test16();
+//    zad13();
+    test17();
+    zad14();
+  }
+
+  private static void zad14() {
+    System.out.println("*** Exc 14-1 ***");
+    exc1401();
+    System.out.println();
+
+  }
+
+  private static void exc1401() {
+
   }
 
   private static void zad13() {
