@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -10,8 +8,9 @@ public class Main {
 //    zad11();
 //    test16();
 //    zad13();
-    test17();
+//    test17();
     zad14();
+//    test18();
   }
 
   private static void zad14() {
@@ -23,6 +22,87 @@ public class Main {
 
   private static void exc1401() {
 
+  }
+
+  private static void test18() {
+    System.out.println("*** test 18_1 ***");
+    quiz1801();
+    System.out.println();
+    System.out.println("*** test 18_2 ***");
+    quiz1802();
+    System.out.println();
+    System.out.println("*** test 18_3 ***");
+    quiz1803();
+    System.out.println();
+    System.out.println("*** test 18_4 ***");
+    quiz1804();
+    System.out.println();
+    System.out.println("*** test 18_6 ***");
+    quiz1806();
+    System.out.println();
+    System.out.println("*** test 18_7 ***");
+    quiz1807();
+    System.out.println();
+    System.out.println("*** test 18_8 ***");
+    quiz1808();
+    System.out.println();
+  }
+
+  private static void quiz1808() {
+    Optional<Double> dbl = Optional.of("Java bootcamp!")
+        .flatMap(x -> Optional.ofNullable(null))
+        .map(x -> 2)
+        .map(x -> 1.9);
+    System.out.println(dbl);
+  }
+
+  private static void quiz1807() {
+    Optional<Integer> opt = Optional.of(123);
+    Optional<String> opt2 = opt
+        .map(x -> 1.0)
+        .map(x -> Integer.valueOf(12).toString())
+        .filter(x -> x.contains("2"));
+    opt2.ifPresentOrElse(x -> System.out.println("Printing: " + x), () -> System.out.println("default"));
+  }
+
+  private static void quiz1806() {
+    Optional<String> opt = Optional.of("null");
+    System.out.println(opt);
+  }
+
+  private static void quiz1804() {
+    StringBuilder sb = new StringBuilder("Java Bootcamp!");
+    sb.append("!!").insert(2, "##");
+    sb.delete(1, 3).insert(1, "#");
+    sb.reverse();
+    System.out.println(sb);
+  }
+
+  private static void quiz1803() {
+    StringBuilder sb = new StringBuilder("Java Bootcamp!");
+    sb.append("!!").insert(2, "##");
+    sb.delete(1, 3).insert(1, "#");
+    sb.reverse();
+    System.out.println(sb);
+  }
+
+  private static void quiz1802() {
+    String s1 = "Java bootcamp!";
+    StringBuilder sb2 = new StringBuilder("Java bootcamp!");
+    if (s1.equals(sb2)) {
+      System.out.println("s1.equals(sb2)");
+    } else {
+      System.out.println("false");
+    }
+//    if (s1 == sb2) {
+//      System.out.println("s1 == sb2");
+//    }
+  }
+
+  private static void quiz1801() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("one").insert(2, "two").insert(3, "three");
+    System.out.println(stringBuilder);
   }
 
   private static void zad13() {
@@ -90,55 +170,30 @@ public class Main {
   }
 
   private static void zad11() {
-    System.out.println("*** Exc 11-1 ***");
+    System.out.println("*** Exc 11_1 ***");
     exc1101();
     System.out.println();
-    System.out.println("*** Exc 11-2 ***");
+    System.out.println("*** Exc 11_2 ***");
     exc1102();
     System.out.println();
-    System.out.println("*** Exc 11-3 ***");
+    System.out.println("*** Exc 11_3 ***");
     exc1103();
     System.out.println();
-    System.out.println("*** Exc 11-4 ***");
+    System.out.println("*** Exc 11_4 ***");
     exc1104();
     System.out.println();
-    System.out.println("*** Exc 11-5 ***");
+    System.out.println("*** Exc 11_5 ***");
     exc1105();
     System.out.println();
-    System.out.println("*** Exc 11-6 ***");
+    System.out.println("*** Exc 11_6 ***");
     exc1106();
     System.out.println();
-    System.out.println("*** Exc 11-7 ***");
+    System.out.println("*** Exc 11_7 ***");
     exc1107("Dupa Romana!");
     System.out.println();
-    System.out.println("*** Exc 11-8 ***");
-    exc1108();
-    System.out.println();
   }
 
-  private static void exc1108() {
-    Map<Integer, String> map = new HashMap<>();
-    Map<Integer, String> map2 = new HashMap<>();
-    map.put(1, "Ala");
-    map.put(2, "Bogdan");
-    map.put(3, "Celina");
-    map.put(4, "Darek");
-    map.put(5, "Erwin");
-    map.put(6, "Fiona");
-    map.put(7, "Grzegorz");
-    System.out.println(map);
-    int a = 3;
-    int b = 5;
-    for (Integer integer : map.keySet()) {
-      if (integer >= 3 && integer < 5) {
-        map2.put(integer, map.get(integer));
-      }
-    }
-    System.out.println(map2);
-
-  }
-
-  private static void exc1107(@NotNull String inputString) {
+  private static void exc1107(String inputString) {
     List<String> strings = new ArrayList<>(Arrays.asList(inputString.split("")));
     System.out.println(strings);
     Map<String, Integer> map = new HashMap<>();
@@ -195,13 +250,13 @@ public class Main {
     System.out.println("after 2: " + integerList);
   }
 
-  private static @NotNull List<Integer> highestToEndList(List<Integer> integerList) {
+  private static List<Integer> highestToEndList(List<Integer> integerList) {
     List<Integer> integerListTemp = new ArrayList<>(integerList);
     highestToEnd(integerListTemp);
     return integerListTemp;
   }
 
-  private static void highestToEnd(@NotNull List<Integer> integerList) {
+  private static void highestToEnd(List<Integer> integerList) {
     Integer max = Integer.MIN_VALUE;
     for (Integer integer : integerList) {
       if (integer.compareTo(max) > 0) {
