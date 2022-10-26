@@ -1,5 +1,7 @@
 package zad14;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface IFace1 {
-	String iFace1(int i);
+	@NotNull String iFace1(int i);
 }

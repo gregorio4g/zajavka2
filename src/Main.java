@@ -1,6 +1,8 @@
 import org.jetbrains.annotations.NotNull;
 import zad14.IFace1;
 import zad14.IFace1Impl;
+import zad14.IFace2;
+import zad14.IFace2Impl;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -8,41 +10,64 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String @NotNull [] args) {
 //    zad11();
 //    test16();
 //    zad13();
 //		test17();
-		zad14();
+//		zad14();
 //    test18();
+		zad15();
+	}
+
+	private static void zad15() {
+		System.out.println("*** Exc 15-1 ***");
+		exc1501("Kobyła ma mały bok");
+		System.out.println();
+
+	}
+
+	private static void exc1501(@NotNull String inputString) {
+		StringBuilder sb = new StringBuilder(inputString);
+
 	}
 
 	private static void zad14() {
 		System.out.println("*** Exc 14-1 ***");
-    int x1 = 4;
+    int x1 = 5;
 		exc1401(x1);
 		System.out.println();
 		System.out.println("*** Exc 14-2 ***");
-    int x2 = 4;
-		String s2 = "Ala";
-		exc1402(x2);
+    int x2 = -23;
+		String s2 = "Ala ma kota!";
+		exc1402(x2, s2);
 		System.out.println();
 
 	}
 
-	private static void exc1402(int x2) {
-
+	private static void exc1402(int x2, @NotNull String s2) {
+		System.out.println("input1 = " + iFace2Call(x2, s2, (x, s) -> s + x));
+		System.out.println("input2 = " + iFace2Call(x2, s2,
+				(x, s) -> new StringBuilder(s)
+				.appendCodePoint(Math.abs(x) + 32)
+				.toString()));
+		System.out.println("input3 = " + iFace2Call(x2, s2, (x, s) -> s.repeat(Math.abs(x)/s.length() + 1)));
+		System.out.println("input4 = " + iFace2Call(x2, s2, new IFace2Impl()));
 	}
 
-	private static void exc1401(int x) {
-		System.out.println("input1 = " + iFace1Call(x, String::valueOf));
-		System.out.println("input2 = " + iFace1Call(x, (int i) -> new StringBuilder().appendCodePoint(i + 32).toString()));
-		System.out.println("input3 = " + iFace1Call(x, i -> String.valueOf(i).repeat(i)));
-		System.out.println("input4 = " + iFace1Call(x, new IFace1Impl()));
+	static @NotNull String iFace2Call(int x, @NotNull String s, @NotNull IFace2 iF2) {
+		return iF2.iFace2(x, s);
 	}
 
-	static String iFace1Call(int input, IFace1 iF1) {
-		return iF1.iFace1(input);
+	private static void exc1401(int x1) {
+		System.out.println("input1 = " + iFace1Call(x1, String::valueOf));
+		System.out.println("input2 = " + iFace1Call(x1, (int i) -> new StringBuilder().appendCodePoint(Math.abs(i) + 32).toString()));
+		System.out.println("input3 = " + iFace1Call(x1, i -> String.valueOf(i).repeat(Math.abs(i))));
+		System.out.println("input4 = " + iFace1Call(x1, new IFace1Impl()));
+	}
+
+	static @NotNull String iFace1Call(int x, IFace1 iF1) {
+		return iF1.iFace1(x);
 	}
 
 	private static void test18() {
