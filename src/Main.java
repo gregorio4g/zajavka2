@@ -17,7 +17,11 @@ public class Main {
 //		test17();
 //		zad14();
 //    test18();
-		zad15();
+//		zad15();
+		test19();
+	}
+
+	private static void test19() {
 	}
 
 	private static void zad15() {
