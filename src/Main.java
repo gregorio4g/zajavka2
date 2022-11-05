@@ -17,8 +17,8 @@ public class Main {
 //		test17();
 //		zad14();
 //    test18();
-//		zad15();
-		test19();
+		zad15();
+//		test19();
 	}
 
 	private static void test19() {
@@ -26,14 +26,31 @@ public class Main {
 
 	private static void zad15() {
 		System.out.println("*** Exc 15-1 ***");
-		exc1501("Kobyła ma mały bok");
+		String input1 = "Red rum, sir, is murder.";
+		System.out.printf("'%s' %sjest palindromem.%n", input1, (exc1501(input1) ? "" : "nie "));
 		System.out.println();
 
+		System.out.println("*** Exc 15-2 ***");
+		StringBuilder input2 = new StringBuilder("Red rum, sir, is murder.");
+		System.out.printf("'%s' -> '%s'%n", input2, exc1502(input2));
+		System.out.println();
 	}
 
-	private static void exc1501(@NotNull String inputString) {
-		StringBuilder sb = new StringBuilder(inputString);
+	private static @NotNull StringBuilder exc1502(StringBuilder sentence) {
+		StringBuilder sb = new StringBuilder(sentence);
+		for (int i = 0; i < sb.length(); i++) {
+			char charCurrent = sb.charAt(i);
+			char charPrevious = (i == 0 ? '.' : sb.charAt(i-1));
+			if (Character.isLetter(charCurrent) && !Character.isLetter(charPrevious)) {
+				sb.replace(i, i+1, String.valueOf(Character.toUpperCase(charCurrent)));
+			}
+		}
+		return sb;
+	}
 
+	private static boolean exc1501(@NotNull String inputString) {
+		StringBuilder sb = new StringBuilder(inputString.toLowerCase().replaceAll("[^a-ząćęłóśźż]", ""));
+		return sb.toString().equals(sb.reverse().toString());
 	}
 
 	private static void zad14() {
