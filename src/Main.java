@@ -36,7 +36,7 @@ public class Main {
 		System.out.println();
 	}
 
-	private static @NotNull StringBuilder exc1502(StringBuilder sentence) {
+	private static @NotNull StringBuilder exc1502(@NotNull StringBuilder sentence) {
 		StringBuilder sb = new StringBuilder(sentence);
 		for (int i = 0; i < sb.length(); i++) {
 			char charCurrent = sb.charAt(i);
@@ -87,7 +87,7 @@ public class Main {
 		System.out.println("input4 = " + iFace1Call(x1, new IFace1Impl()));
 	}
 
-	static @NotNull String iFace1Call(int x, IFace1 iF1) {
+	static @NotNull String iFace1Call(int x, @NotNull IFace1 iF1) {
 		return iF1.iFace1(x);
 	}
 
@@ -260,7 +260,7 @@ public class Main {
 		System.out.println();
 	}
 
-	private static void exc1107(String inputString) {
+	private static void exc1107(@NotNull String inputString) {
 		List<String> strings = new ArrayList<>(Arrays.asList(inputString.split("")));
 		System.out.println(strings);
 		Map<String, Integer> map = new HashMap<>();
@@ -317,7 +317,7 @@ public class Main {
 		System.out.println("after 2: " + integerList);
 	}
 
-	private static @NotNull List<Integer> highestToEndList(List<Integer> integerList) {
+	private static @NotNull List<Integer> highestToEndList(@NotNull List<Integer> integerList) {
 		List<Integer> integerListTemp = new ArrayList<>(integerList);
 		highestToEnd(integerListTemp);
 		return integerListTemp;
